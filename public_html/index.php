@@ -3,7 +3,7 @@
 // ***********************************
 // Initialisation de l'environnement *
 // ***********************************
-require('./../config/config.ini.php');
+require(__DIR__ . '/../config/config.ini.php');
 
 // ******************************
 // Initialisation de la session *

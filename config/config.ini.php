@@ -10,11 +10,12 @@
 // Debug (Boolean : TRUE / FALSE)
 define('_DEBUG_',FALSE);
 
-// Si on a pas ces infos, rien ne peut fonctionner : die
-if (!isset($_SERVER['CONTEXT_DOCUMENT_ROOT'])) die("impossible de determiner SERVER['CONTEXT_DOCUMENT_ROOT']");
-
-// Define de la racine du site
-define('_PATH_', $_SERVER['CONTEXT_DOCUMENT_ROOT'].'/../');
+//// Si on a pas ces infos, rien ne peut fonctionner : die
+//if (!isset($_SERVER['CONTEXT_DOCUMENT_ROOT'])) die("impossible de determiner SERVER['CONTEXT_DOCUMENT_ROOT']");
+//
+//// Define de la racine du site
+//define('_PATH_', $_SERVER['CONTEXT_DOCUMENT_ROOT'].'/../');
+define('_PATH_', $_SERVER['DOCUMENT_ROOT'].'/../');
 
 // Define du dossier Coeur
 define('_CORE_', _PATH_ . 'core/');
@@ -132,10 +133,11 @@ fORMDatabase::attach($db);
 // Initialisation de la sécurité *
 // *******************************
 
-if (!isset($_SERVER['CONTEXT_PREFIX'])) die("impossible de determiner SERVER['CONTEXT_PREFIX']");
-
-// Setup login page (en dur)
-fAuthorization::setLoginPage($_SERVER['CONTEXT_PREFIX'] . '/?page=login');
+//if (!isset($_SERVER['CONTEXT_PREFIX'])) die("impossible de determiner SERVER['CONTEXT_PREFIX']");
+//
+//// Setup login page (en dur)
+//fAuthorization::setLoginPage($_SERVER['CONTEXT_PREFIX'] . '/?page=login');
+fAuthorization::setLoginPage('/?page=login');
 
 // Set authorization levels
 fAuthorization::setAuthLevels(
